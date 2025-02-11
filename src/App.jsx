@@ -1,14 +1,10 @@
-import photos from './assets/Data/photos.json'
-import './App.css'
-
-console.log(photos);
-
+import './App.scss'
 
 function App() {
 
   return (
     <>
-      {photos}
+    <h1>Hello</h1>
     </>
   )
 }

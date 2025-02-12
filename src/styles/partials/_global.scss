@@ -1,0 +1,13 @@
+@use "./typography" as *;
+@use "./variables" as *;
+@use "./mixins" as *;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Newsreader", "Outfit";
+    width: 100%;
+}

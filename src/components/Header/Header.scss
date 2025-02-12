@@ -1,6 +1,4 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/typography" as *;
-
-h1{
-    color: red;
-    font-family: "Newsreader", "Outfit";
-}
+@use "../../styles/partials/variables" as *;

@@ -1,0 +1,25 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+
+.hero{
+    padding-top: 4rem;
+
+    &__title{
+
+        font-family: "Outfit";
+
+    }
+    &__content{
+
+        padding-top: 1rem;
+        line-height: 2.5rem;
+        font-weight: 200;
+
+        &--italic{
+            font-weight: 300;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+
+.footer{
+    font-family: "Outfit";
+
+    h2{
+        padding-top: 2rem;
+        font-family: "Newsreader";
+        font-size: 2.5rem;
+        font-weight: 400;
+        line-height: 2.5rem;
+    }
+    
+    &__links--1{
+
+        padding-top: 2rem;
+
+        a{
+            text-decoration: none;
+            line-height: 2rem;
+            color: $primary-text-color;
+            font-size: 1rem;
+        }
+
+    }
+
+    &__links--2{
+
+        padding-top: 2rem;
+
+        a{
+            text-decoration: none;
+            line-height: 2rem;
+            color: $primary-text-color;
+            font-size: 1rem;
+        }
+
+    }
+
+    &__icon--container{
+        padding-top: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 50%;
+
+    }
+    &__icon{
+        height: 1.75rem; 
+        width: auto; 
+    }
+
+    &__mark{
+        padding-top: 1rem;
+        display: flex;
+        color: $secondary-border-color;
+        gap: 20px;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+}

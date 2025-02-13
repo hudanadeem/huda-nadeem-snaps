@@ -1,0 +1,51 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+
+.photo-list{
+    padding-top: 2rem;
+    font-family: "Outfit";
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.photo{
+    position: relative; 
+    border-radius: 0.75rem;
+    border: 2px solid $secondary-border-color;
+    margin-bottom: 2rem;
+
+    &__img{
+        height: auto;
+        width: 100%;
+        border-radius: .75rem;
+        z-index: 0;
+        display: block; 
+    }
+    &__content{
+        width: 100%;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+
+    }
+    &__photographer{
+        background-color: $secondary-background-color;
+        position: absolute;
+        right: 0;
+        bottom: 2.25rem;
+        padding: .5rem;
+        border-radius: 0.75rem 0 0 0;
+        border-bottom: .0313rem solid $secondary-border-color;
+    }
+    &__tags{
+        padding: .5rem;
+        border-radius: 0.75rem;
+        background-color: $secondary-background-color;
+        border-radius: 0 0 0.75rem 0.75rem;
+    }
+}

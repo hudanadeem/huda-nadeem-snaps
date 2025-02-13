@@ -1,0 +1,22 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.tag{
+    border: 2px solid $secondary-border-color;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    background-color: $primary-background-color;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    color: $primary-text-color;
+}

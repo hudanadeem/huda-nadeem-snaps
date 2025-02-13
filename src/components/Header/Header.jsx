@@ -7,7 +7,8 @@ const Header = () =>{
         <header className='header'>
             <h1 className='header__title'>Snaps</h1>
             <button className='header__nav'>
-                Filters <img src={FilterIcon} alt="Filter Icon" className="header__icon" />
+                Filters 
+                <img src={FilterIcon} alt="Filter Icon" className="header__icon" />
             </button>
         </header>
         </>

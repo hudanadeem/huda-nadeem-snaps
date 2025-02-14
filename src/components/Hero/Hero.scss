@@ -7,9 +7,17 @@
 .hero{
     padding: 2rem 1rem 1rem 1rem;
 
-    &__title{
+    @include tablet{
+        padding: 2rem 2rem 1rem 2rem;
+    }
 
+    &__title{
         font-family: "Outfit";
+
+        @include tablet{
+            font-size: 1.5rem;
+            padding-bottom: 1rem;
+        }
 
     }
     &__content{
@@ -17,6 +25,11 @@
         padding-top: 1rem;
         line-height: 2.5rem;
         font-weight: 200;
+        @include tablet{
+            font-size: 3.25rem;
+            line-height: 5rem;
+        }
+    
 
         &--italic{
             font-weight: 300;

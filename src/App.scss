@@ -6,3 +6,27 @@
 
 
 
+
+.drawer {
+    display: none;
+  
+    &--open {
+      display: block;
+    }
+  }
+
+.filterTag {
+    background-color: lightgreen;
+
+    &--clickable {
+        cursor: pointer;
+        &:hover {
+        background-color: green;
+        }
+    }
+
+    &--selected {
+        background-color: darkgreen;
+        color: whitesmoke;
+    }
+}

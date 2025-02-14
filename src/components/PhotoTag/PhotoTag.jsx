@@ -1,21 +1,13 @@
 import './PhotoTag.scss'
 
-const PhotoTag = ({tags}) =>{
+const PhotoTag = ({tag}) =>{
     return (
-        <>
-        <ul>
-          {tags.map((tag) => {
-            return(
-              <li key={tag}>
-                <button className="tag">
-                  {tag}
-                </button>
-              </li>
-            )
-          })}
-        </ul>
-        </>
+      <>    
+       <button className={'tag'}>
+          {tag}
+      </button>
+      </>
     )
-}
+  }
 
 export default PhotoTag;

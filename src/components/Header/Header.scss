@@ -34,4 +34,11 @@
         height: 1.2rem;
 
     }
+    &__drawer {
+        display: none;
+      
+        &--open {
+          display: block;
+        }
+    }
 }

@@ -3,7 +3,7 @@ import './PhotoTag.scss'
 const PhotoTag = ({tag}) =>{
     return (
       <>    
-       <button className={'tag'}>
+       <button className={'photo__tag'}>
           {tag}
       </button>
       </>

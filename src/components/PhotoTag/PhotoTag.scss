@@ -4,14 +4,7 @@
 @use "../../styles/partials/variables" as *;
 
 
-ul{
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-}
-
-.tag{
+.photo__tag{
     border: 2px solid $secondary-border-color;
     padding: 0.5rem;
     border-radius: 0.75rem;

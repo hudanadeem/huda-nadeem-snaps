@@ -13,10 +13,11 @@ const Header = ({setDrawerOpen, drawerOpen, selectedTag, setSelectedTag}) =>{
           setDrawerOpen(!drawerOpen);
           }}>
             <button className='header__nav'>
-              {drawerOpen ? "Close" : "Open"} Filters 
+              Filters 
+              <img className="header__icon" src={FilterIcon} alt="Filter Icon"/>
             </button>
           </div>
-          <div className={`drawer ${drawerOpen ? "drawer--open" : ""}`}>
+          <div className={`header__drawer ${drawerOpen ? "header__drawer--open" : ""}`}>
             <ul>
               {tags.map((tag) =>{
                 return(

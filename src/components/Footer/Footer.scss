@@ -7,10 +7,13 @@
 .footer{
     font-family: "Outfit";
     padding: 1rem;
+    z-index: 0;
+    position: relative;
 
     @include tablet{
         padding: 1rem 2rem;
     }
+
 
     h2{
         padding-top: 2rem;
@@ -26,6 +29,13 @@
             display: flex;
             gap: 100px;
             width: calc(50% - 1.5rem);
+        }
+
+        @include desktop{
+            position: absolute;
+            bottom: 11rem;
+            right: 0;
+            width: calc(40% );
         }
 
         &--conatiner{
@@ -79,6 +89,16 @@
             padding-top: 3rem;
         }
 
+        @include desktop{
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            z-index: 1;
+            position: absolute;
+            bottom: 15rem;
+            right: 2rem;
+        }
+
     }
     &__icon{
         height: 1.75rem; 
@@ -86,11 +106,16 @@
     }
 
     &__mark{
+        font-family: "Outfit";
         padding-top: 1rem;
         display: flex;
         color: $secondary-border-color;
         gap: 20px;
         font-weight: 600;
         font-size: 1rem;
+
+        @include desktop{
+            padding-top: 8rem;
+        }
     }
 }

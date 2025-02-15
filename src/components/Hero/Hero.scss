@@ -29,6 +29,9 @@
             font-size: 3.25rem;
             line-height: 5rem;
         }
+        @include desktop{
+            width: 60%;
+        }
     
 
         &--italic{

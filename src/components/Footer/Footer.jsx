@@ -10,16 +10,20 @@ const Footer = () =>{
     return(
         <>
         <div className='footer'>
-            <h2>Snaps</h2>
-            <div className='footer__links--1'>
-                <h3><a href="#">For photographers</a></h3>
-                <h3><a href="#">Hire Talent</a></h3>
-                <h3><a href="#">Insipration</a></h3>
-            </div>
-            <div className='footer__links--2'>
-                <h3><a href="#">About</a></h3>
-                <h3><a href="#">Careers</a></h3>
-                <h3><a href="#">Support</a></h3>
+            <div className='footer__links--conatiner'>
+                <h2>Snaps</h2>
+                <div className='footer__links'>
+                    <div className='footer__links--1'>
+                        <h3><a href="#">For photographers</a></h3>
+                        <h3><a href="#">Hire Talent</a></h3>
+                        <h3><a href="#">Insipration</a></h3>
+                    </div>
+                    <div className='footer__links--2'>
+                        <h3><a href="#">About</a></h3>
+                        <h3><a href="#">Careers</a></h3>
+                        <h3><a href="#">Support</a></h3>
+                    </div>
+                </div>
             </div>
             <div className='footer__icon--container'>
                 <a href = "https://www.facebook.com/">

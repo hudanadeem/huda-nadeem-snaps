@@ -9,6 +9,12 @@
     font-family: "Outfit";
     font-size: 1rem;
     font-weight: 600;
+
+    @include tablet{
+        padding: 2rem 2rem 0rem 2rem;
+        @include flex(row,space-between,flex-start);
+        flex-wrap: wrap;
+    }
 }
 
 .photo{
@@ -16,11 +22,15 @@
     border-radius: 0.75rem;
     border: 2px solid $secondary-border-color;
     margin-bottom: 2rem;
+    overflow: hidden;
+
+    @include tablet{
+        width: calc(50% - 1rem);
+    }
 
     &__img{
         height: auto;
         width: 100%;
-        border-radius: .75rem;
         z-index: 0;
         display: block; 
     }
@@ -31,13 +41,12 @@
         bottom: 0;
         left: 0;
         z-index: 1;
-
     }
     &__photographer{
         background-color: $secondary-background-color;
         position: absolute;
         right: 0;
-        bottom: 3.6rem;
+        bottom: 3.65rem;
         padding: .5rem;
         border-radius: 0.75rem 0 0 0;
         border-bottom: .0313rem solid $secondary-border-color;
@@ -45,6 +54,5 @@
     &__tags{
         padding: 0.75rem;
         background-color: $secondary-background-color;
-        border-radius: 0 0 0.75rem 0.75rem;
     }
 }

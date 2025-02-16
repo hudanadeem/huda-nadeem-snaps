@@ -4,7 +4,7 @@
 @use "../../styles/partials/variables" as *;
 
 
-.photo-list{
+.photo__drawer{
     padding: 2rem 1rem 1rem 1rem;
     font-family: "Outfit";
     font-size: 1rem;
@@ -15,6 +15,16 @@
         @include flex(row,space-between,flex-start);
         flex-wrap: wrap;
     }
+
+    @include desktop {
+        width: 100%; // Default width when drawer is closed
+
+        &.photo__drawer--open {
+            width: 67.33%; // Shrinks when the drawer is open
+        }
+    }
+
+
 }
 
 .photo{
@@ -27,8 +37,13 @@
     @include tablet{
         width: calc(50% - 1rem);
     }
-    @include desktop{
-        width: calc(33.33% - 1rem);
+
+    @include desktop {
+        width: calc(33.33% - 1.5rem); // Default (3 per row)
+
+        .photo__drawer--open & {
+            width: calc(50% - 1.1rem); // 2 per row when drawer is open
+        }
     }
 
     &__img{

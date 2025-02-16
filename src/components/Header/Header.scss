@@ -5,6 +5,9 @@
 
 .header {
 
+  position: relative;
+  z-index: 1;
+
   &__container {
     padding: 2rem 1rem 2rem 1rem;
     display: flex;
@@ -72,6 +75,14 @@
       @include tablet{
         gap: 3rem;
       }
+      @include desktop {
+        position: absolute;
+        right: 0;
+        width: 28rem;
+        z-index: 0;
+        padding: 2rem 4rem;
+        max-height: calc(100vh - 1rem - 5rem); 
+    }
     }
   }
 }

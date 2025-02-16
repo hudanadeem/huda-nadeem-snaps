@@ -17,7 +17,7 @@ function App() {
     <>
     <Header setDrawerOpen = {setDrawerOpen} drawerOpen ={drawerOpen} selectedTag = {selectedTag} setSelectedTag={setSelectedTag}/>
     <Hero/>
-    <PhotoList filteredPhotos={filteredPhotos}/>
+    <PhotoList filteredPhotos={filteredPhotos} drawerOpen ={drawerOpen}/>
     <Footer/>
     </>
   )

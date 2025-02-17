@@ -20,7 +20,7 @@
     font-weight: 400;
     line-height: 2.5rem;
 
-    @include tablet{
+    @include tablet {
       font-size: 3.5rem;
     }
   }
@@ -49,32 +49,10 @@
       }
     }
 
-    &--1 {
-      padding-top: 2rem;
-      @include tablet{
-        padding-top: 1rem;
-      }
-
-      a {
-        text-decoration: none;
-        line-height: 2rem;
-        color: $primary-text-color;
-        font-size: 1rem;
-
-        @include tablet{
-          font-size: 2rem;
-          line-height: 3.5rem;
-        }
-        @include desktop{
-          font-size: 1.5rem;
-          line-height: 2.5rem;
-        }
-      }
-    }
-
+    &--1,
     &--2 {
       padding-top: 2rem;
-      @include tablet{
+      @include tablet {
         padding-top: 1rem;
       }
 
@@ -83,11 +61,12 @@
         line-height: 2rem;
         color: $primary-text-color;
         font-size: 1rem;
-        @include tablet{
+
+        @include tablet {
           font-size: 2rem;
           line-height: 3.5rem;
         }
-        @include desktop{
+        @include desktop {
           font-size: 1.5rem;
           line-height: 2.5rem;
         }
@@ -129,7 +108,7 @@
     padding-top: 1rem;
     display: flex;
     color: $secondary-border-color;
-    gap: 20px;
+    gap: 1.25rem;
     font-weight: 600;
     font-size: 1rem;
 

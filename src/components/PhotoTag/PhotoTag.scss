@@ -4,7 +4,7 @@
 @use "../../styles/partials/variables" as *;
 
 .photo__tag {
-  border: 1.5px solid $secondary-border-color;
+  border: .0938rem solid $secondary-border-color;
   padding: 0.5rem;
   border-radius: 0.75rem;
   background-color: $secondary-text-color;
@@ -13,13 +13,13 @@
   margin-right: 0.5rem;
   color: $primary-text-color;
 
-  @include tablet{
+  @include tablet {
     border-radius: 0.75rem;
     font-size: 1rem;
     margin-right: 1rem;
     padding: 0.85rem 1rem;
   }
-  @include desktop{
+  @include desktop {
     font-size: 0.85rem;
     margin-right: 0.5rem;
     padding: 0.6rem;

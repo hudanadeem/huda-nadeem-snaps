@@ -4,7 +4,6 @@
 @use "../../styles/partials/variables" as *;
 
 .header {
-
   position: relative;
   z-index: 1;
 
@@ -14,7 +13,7 @@
     align-items: center;
     justify-content: space-between;
 
-    @include tablet{
+    @include tablet {
       padding: 3rem 2rem;
     }
   }
@@ -24,7 +23,7 @@
     font-weight: 400;
     line-height: 2.5rem;
 
-    @include tablet{
+    @include tablet {
       font-size: 3.5rem;
       font-weight: 400;
       line-height: 2.5rem;
@@ -43,12 +42,11 @@
     background-color: transparent;
     font-family: "Outfit";
 
-    @include tablet{
+    @include tablet {
       font-size: 1rem;
       font-weight: 600;
       padding: 0.5rem 2rem;
     }
-
   }
   &__icon {
     width: 1.2rem;
@@ -58,12 +56,12 @@
     padding: 1rem 1.5rem 1rem 1.5rem;
     display: none;
 
-    @include tablet{
+    @include tablet {
       padding: 2rem 2rem 6rem 2rem;
     }
 
-    &--title{
-        font-family: "Outfit";
+    &--title {
+      font-family: "Outfit";
     }
 
     &--open {
@@ -72,7 +70,7 @@
       gap: 1.25rem;
       background-color: $secondary-background-color;
 
-      @include tablet{
+      @include tablet {
         gap: 3rem;
       }
       @include desktop {
@@ -81,8 +79,8 @@
         width: 28rem;
         z-index: 0;
         padding: 2rem 4rem;
-        max-height: calc(100vh - 1rem - 5rem); 
-    }
+        max-height: calc(100vh - 1rem - 5rem);
+      }
     }
   }
 }

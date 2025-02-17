@@ -14,7 +14,7 @@
     font-family: "Outfit";
 
     @include tablet {
-      font-size: 1.5rem;
+      font-size: 2rem;
       padding-bottom: 1rem;
     }
   }
@@ -24,8 +24,8 @@
     line-height: 3rem;
     font-weight: 200;
     @include tablet {
-      font-size: 3.25rem;
-      line-height: 5rem;
+      font-size: 3.75rem;
+      line-height: 6rem;
     }
     @include desktop {
       width: 60%;

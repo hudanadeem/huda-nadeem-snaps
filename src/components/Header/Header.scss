@@ -43,9 +43,9 @@
     font-family: "Outfit";
 
     @include tablet {
-      font-size: 1rem;
+      font-size: 1.2rem;
       font-weight: 600;
-      padding: 0.5rem 2rem;
+      padding: 0.75rem 2.5rem;
     }
   }
   &__icon {

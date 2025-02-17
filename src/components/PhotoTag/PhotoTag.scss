@@ -7,9 +7,16 @@
   border: 1.5px solid $secondary-border-color;
   padding: 0.5rem;
   border-radius: 0.75rem;
-  background-color: $primary-background-color;
+  background-color: $secondary-text-color;
   font-weight: 600;
   font-size: 0.85rem;
   margin-right: 0.5rem;
   color: $primary-text-color;
+
+  @include tablet{
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    margin-right: 1rem;
+    padding: 0.85rem 1rem;
+  }
 }

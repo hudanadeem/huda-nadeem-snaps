@@ -27,14 +27,13 @@
 
   &__links {
     @include tablet {
-      display: flex;
-      justify-content: space-between;
+      @include flex(row, space-between, flex-start);
       width: calc(50% - 1rem);
     }
 
     @include desktop {
       position: absolute;
-      justify-content: normal;
+      @include flex(row, normal, flex-start);
       gap: 5rem;
       bottom: 14rem;
       right: 0;
@@ -43,8 +42,7 @@
 
     &--conatiner {
       @include tablet {
-        display: flex;
-        justify-content: space-between;
+        @include flex(row, space-between, flex-start);
         padding-bottom: 4rem;
       }
     }
@@ -76,21 +74,17 @@
 
   &__icon--container {
     padding-top: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(row, space-between, center);
     width: 50%;
 
     @include tablet {
-      display: flex;
-      justify-content: normal;
+      @include flex(row, normal, center);
       gap: 1rem;
       padding-top: 3rem;
     }
 
     @include desktop {
-      display: flex;
-      justify-content: flex-end;
+      @include flex(row, flex-end, center);
       width: 100%;
       z-index: 1;
       position: absolute;
@@ -106,7 +100,7 @@
   &__mark {
     font-family: "Outfit";
     padding-top: 1rem;
-    display: flex;
+    @include flex(row, flex-start, center);
     color: $secondary-border-color;
     gap: 1.25rem;
     font-weight: 600;

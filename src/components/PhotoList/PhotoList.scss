@@ -73,6 +73,10 @@
       font-size: 1.1rem;
       padding: 0.75rem 0.95rem;
     }
+    @include desktop{
+      bottom: 4.3rem;
+      font-size: 0.85rem;
+    }
   }
   &__tags {
     padding: 0.75rem;
@@ -80,6 +84,9 @@
 
     @include tablet{
       padding: 1.5rem;
+    }
+    @include desktop{
+      padding: 1rem;
     }
   }
 }

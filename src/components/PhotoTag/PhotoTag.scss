@@ -4,11 +4,12 @@
 @use "../../styles/partials/variables" as *;
 
 .photo__tag {
-  border: 2px solid $secondary-border-color;
+  border: 1.5px solid $secondary-border-color;
   padding: 0.5rem;
   border-radius: 0.75rem;
   background-color: $primary-background-color;
   font-weight: 600;
+  font-size: 0.85rem;
   margin-right: 0.5rem;
   color: $primary-text-color;
 }

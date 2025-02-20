@@ -4,8 +4,10 @@
 @use "../../styles/partials/variables" as *;
 
 .header {
-  position: relative;
-  z-index: 1;
+  position: fixed;
+  background-color: $primary-background-color;
+  width: 100%;
+  z-index: 2;
 
   &__container {
     padding: 2rem 1rem 2rem 1rem;
@@ -39,6 +41,20 @@
     background-color: transparent;
     font-family: "Outfit";
 
+    &:hover {
+      color: $secondary-text-color;
+      background-color: $primary-accent-color;
+
+      .header__icon {
+        fill: $secondary-text-color;
+      }
+    }
+
+    &--active {
+      color: $secondary-text-color;
+      background-color: $primary-accent-color;
+    }
+
     @include tablet {
       font-size: 1.2rem;
       font-weight: 600;
@@ -48,6 +64,10 @@
   &__icon {
     width: 1.2rem;
     height: 1.2rem;
+
+    &--active {
+      fill: $secondary-text-color;
+    }
   }
   &__drawer {
     padding: 1rem 1.5rem 1rem 1.5rem;

@@ -1,9 +1,7 @@
 import "./Header.scss";
-import FilterIcon from "../../assets/images/Filter.svg";
-import tags from "../../data/tags.json";
 import Tag from "../FilterTag/FilterTag";
 
-const Header = ({ setDrawerOpen, drawerOpen, selectedTag, setSelectedTag }) => {
+const Header = ({ setDrawerOpen, drawerOpen, selectedTag, setSelectedTag, tags }) => {
   return (
     <header className="header">
       <div className="header__container">

@@ -4,13 +4,13 @@
 @use "../../styles/partials/variables" as *;
 
 .header {
-  position: fixed;
-  background-color: $primary-background-color;
-  width: 100%;
-  z-index: 2;
-
   &__container {
     padding: 2rem 1rem 2rem 1rem;
+    margin-bottom: 5rem;
+    position: fixed;
+    background-color: $primary-background-color;
+    width: 100%;
+    z-index: 2;
     @include flex(row, space-between, center);
 
     @include tablet {
@@ -70,11 +70,11 @@
     }
   }
   &__drawer {
-    padding: 1rem 1.5rem 1rem 1.5rem;
+    padding: 8rem 1.5rem 1rem 1.5rem;
     display: none;
 
     @include tablet {
-      padding: 2rem 2rem 6rem 2rem;
+      padding: 12rem 2rem 6rem 2rem;
     }
 
     &--title {
@@ -91,6 +91,7 @@
       }
       @include desktop {
         position: absolute;
+        top: 9rem;
         right: 0;
         width: 28rem;
         z-index: 0;

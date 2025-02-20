@@ -1,8 +1,8 @@
 import "./Hero.scss";
 
-const Hero = () => {
+const Hero = ({drawerOpen}) => {
   return (
-    <div className="hero">
+    <div className={`hero ${drawerOpen ? "hero--active" : ""}`}>
       <p className="hero__title">Our mission:</p>
       <h2 className="hero__content">
         Provide photographers a space to share photos of the neighborhoods they

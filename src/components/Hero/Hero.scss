@@ -4,10 +4,24 @@
 @use "../../styles/partials/variables" as *;
 
 .hero {
-  padding: 2rem 1rem 1rem 1rem;
+  padding: 8rem 1rem 1rem 1rem;
+
+  &--active {
+    padding-top: 2rem;
+  }
 
   @include tablet {
-    padding: 2rem 2rem 1rem 2rem;
+    padding: 11rem 2rem 1rem 2rem;
+
+    &--active {
+      padding-top: 2rem;
+    }
+  }
+
+  @include desktop {
+    &--active {
+      padding-top: 11rem;
+    }
   }
 
   &__title {

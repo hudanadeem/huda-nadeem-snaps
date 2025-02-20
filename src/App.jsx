@@ -21,7 +21,7 @@ function App() {
         selectedTag={selectedTag}
         setSelectedTag={setSelectedTag}
       />
-      <Hero />
+      <Hero drawerOpen={drawerOpen} />
       <PhotoList filteredPhotos={filteredPhotos} drawerOpen={drawerOpen} />
       <Footer />
     </>

@@ -1,11 +1,22 @@
 import "./Header.scss";
 import Tag from "../FilterTag/FilterTag";
+import { Link } from "react-router-dom";
 
-const Header = ({ setDrawerOpen, drawerOpen, selectedTag, setSelectedTag, tags }) => {
+const Header = ({
+  setDrawerOpen,
+  drawerOpen,
+  selectedTag,
+  setSelectedTag,
+  tags,
+}) => {
   return (
     <header className="header">
       <div className="header__container">
-        <h1 className="header__title">Snaps</h1>
+        <h1 className="header__title">
+          <Link className="header__link" to="/">
+            Snaps
+          </Link>
+        </h1>
         <div
           onClick={() => {
             setDrawerOpen(!drawerOpen);

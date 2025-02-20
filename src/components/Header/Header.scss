@@ -17,6 +17,10 @@
       padding: 3rem 2rem;
     }
   }
+  &__link {
+    text-decoration: none;
+    color: $primary-text-color;
+  }
 
   &__title {
     font-size: 2.5rem;

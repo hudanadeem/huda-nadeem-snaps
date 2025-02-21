@@ -7,11 +7,13 @@ import PhotoCard from "../../components/PhotoCard/PhotoCard";
 import { useState, useEffect } from "react";
 import tags from "../../data/tags.json";
 import Form from "../../components/Form/Form";
+import Comment from "../../components/Comment/Comment";
 
 function PhotoPage() {
   const API_URL = "https://unit-3-project-c5faaab51857.herokuapp.com";
   const API_KEY = "?api_key=325ecbce-cb56-4c39-8333-877b3e1bfb3b";
   const [photos, setPhotos] = useState(null);
+  const [comments, setComments] = useState(null);
   const [loading, setLoading] = useState(true);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [selectedTag, setSelectedTag] = useState(null);
@@ -29,10 +31,21 @@ function PhotoPage() {
       .catch((error) => {
         console.error("Error fetching photos:", error);
       });
-  }, []);
+  }, [id]);
 
-  if (loading) {
-    return <div>loading photo...</div>;
+  useEffect(() => {
+    axios
+      .get(`${API_URL}/photos/${id}/comments${API_KEY}`)
+      .then((response) => {
+        setComments(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching comments:", error);
+      });
+  }, [id]);
+
+  if (loading || !photos) {
+    return <div>Loading photo...</div>;
   }
 
   return (
@@ -45,7 +58,13 @@ function PhotoPage() {
         tags={tags}
       />
       <PhotoCard photos={photos} />
-      <Form/>
+      <Form />
+      <div className="comments">
+        <div className="comment__count"> {comments?.length} Comments</div>
+        {comments?.map((comment) => {
+          return <Comment key={comment.id} comment={comment} />;
+        })}
+      </div>
       <Footer />
     </>
   );

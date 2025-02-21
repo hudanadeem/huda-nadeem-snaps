@@ -13,11 +13,10 @@ function PhotoPage() {
   const API_URL = "https://unit-3-project-c5faaab51857.herokuapp.com";
   const API_KEY = "?api_key=325ecbce-cb56-4c39-8333-877b3e1bfb3b";
   const [photos, setPhotos] = useState(null);
-  const [comments, setComments] = useState(null);
+  const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [selectedTag, setSelectedTag] = useState(null);
-
   const { id } = useParams();
 
   useEffect(() => {
@@ -58,7 +57,7 @@ function PhotoPage() {
         tags={tags}
       />
       <PhotoCard photos={photos} />
-      <Form />
+      <Form API_URL={API_URL} API_KEY = {API_KEY} id={id} setComments={setComments} comments={comments}/>
       <div className="comments">
         <div className="comment__count"> {comments?.length} Comments</div>
         {comments?.map((comment) => {

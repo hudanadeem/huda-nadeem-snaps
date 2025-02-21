@@ -2,10 +2,11 @@ import "./PhotoPage.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import axios from "axios";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import PhotoCard from "../../components/PhotoCard/PhotoCard";
 import { useState, useEffect } from "react";
 import tags from "../../data/tags.json";
+import Form from "../../components/Form/Form";
 
 function PhotoPage() {
   const API_URL = "https://unit-3-project-c5faaab51857.herokuapp.com";
@@ -44,6 +45,7 @@ function PhotoPage() {
         tags={tags}
       />
       <PhotoCard photos={photos} />
+      <Form/>
       <Footer />
     </>
   );

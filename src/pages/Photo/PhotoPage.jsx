@@ -55,12 +55,14 @@ function PhotoPage() {
         selectedTag={selectedTag}
         setSelectedTag={setSelectedTag}
         tags={tags}
+        showFilters={false}
+        showHomeLink={true}
       />
       <PhotoCard photos={photos} />
       <Form API_URL={API_URL} API_KEY = {API_KEY} id={id} setComments={setComments} comments={comments}/>
       <div className="comments">
         <div className="comment__count"> {comments?.length} Comments</div>
-        {comments?.map((comment) => {
+        {comments.map((comment) => {
           return <Comment key={comment.id} comment={comment} />;
         })}
       </div>

@@ -47,6 +47,8 @@ function HomePage() {
         selectedTag={selectedTag}
         setSelectedTag={setSelectedTag}
         tags={tags}
+        showFilters={true}
+        showHomeLink={false}
       />
       <Hero drawerOpen={drawerOpen} />
       <PhotoList filteredPhotos={filteredPhotos} drawerOpen={drawerOpen} />

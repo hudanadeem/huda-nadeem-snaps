@@ -103,4 +103,23 @@
       }
     }
   }
+
+  &__photoPage{
+
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    &--link{
+      font-size: 2rem;
+      padding: 0;
+      font-weight: 600;
+      color: $primary-accent-color;
+      text-decoration: none;
+      font-family: "Outfit";
+    }
+  }
+  &__arrow{
+    height: 1.5rem;
+  }
 }

@@ -5,19 +5,31 @@ import axios from "axios";
 function Form({ API_URL, API_KEY, id, setComments, comments }) {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
+  const [error, setError] = useState(false);
 
   const handleChangeName = (event) => {
     setName(event.target.value);
+    if (error && event.target.value) {
+      setError(false);
+    }
   };
   const handleChangeComment = (event) => {
     setComment(event.target.value);
+    if (error && event.target.value) {
+      setError(false);
+    }
+  };
+
+  const isFormValid = () => {
+    return name.trim() !== "" && comment.trim() !== "";
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (!name || !comment) {
-      console.log("Failed to comment, you have errors in your form");
+    if (!isFormValid()) {
+      console.log(!isFormValid());
+      setError(true);
       return;
     }
 
@@ -53,7 +65,7 @@ function Form({ API_URL, API_KEY, id, setComments, comments }) {
             <label className="form__label">
               name
               <input
-                className="form__name"
+                className={`form__name ${error ? "form__name--error" : ""}`}
                 type="text"
                 name="name"
                 onChange={handleChangeName}
@@ -63,7 +75,7 @@ function Form({ API_URL, API_KEY, id, setComments, comments }) {
             <label className="form__label">
               comment
               <textarea
-                className="form__comment"
+                className={`form__comment ${error ? "form__comment--error" : ""}`}
                 name="comment"
                 onChange={handleChangeComment}
                 value={comment}

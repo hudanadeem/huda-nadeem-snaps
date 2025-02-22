@@ -9,6 +9,10 @@
   @include tablet{
     padding: 0rem 2rem;
   }
+
+  @include desktop{
+    padding: 0rem 17rem;
+  }
 }
 
 .form {

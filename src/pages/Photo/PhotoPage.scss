@@ -5,6 +5,10 @@
 
 .comments{
     padding: 1rem;
+
+    @include tablet{
+      padding: 1rem 2rem;
+    }
 }
 .comment__count {
   font-weight: 600;

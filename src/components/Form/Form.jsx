@@ -1,11 +1,31 @@
 import "./Form.scss";
-import { useState} from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 function Form({ API_URL, API_KEY, id, setComments, comments }) {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [error, setError] = useState(false);
+
+
+  const getCommentsAndRender = async () => {
+    try {
+      const response = await axios.get(
+        `${API_URL}/photos/${id}/comments?api_key=${API_KEY}`
+      );
+      const sortedComments = response.data.sort(
+        (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
+      );
+
+      setComments(sortedComments);
+    } catch (error) {
+      console.error("Error fetching comments:", error);
+    }
+  };
+
+  useEffect(() => {
+    getCommentsAndRender();
+  }, [API_URL, API_KEY, id]);
 
   const handleChangeName = (event) => {
     setName(event.target.value);
@@ -46,7 +66,9 @@ function Form({ API_URL, API_KEY, id, setComments, comments }) {
       })
       .then((response) => {
         if (response.status === 201) {
-          setComments([...comments, response.data]);
+
+          setComments([response.data, ...comments]); 
+          getCommentsAndRender();
 
           setName("");
           setComment("");
@@ -75,7 +97,9 @@ function Form({ API_URL, API_KEY, id, setComments, comments }) {
             <label className="form__label">
               comment
               <textarea
-                className={`form__comment ${error ? "form__comment--error" : ""}`}
+                className={`form__comment ${
+                  error ? "form__comment--error" : ""
+                }`}
                 name="comment"
                 onChange={handleChangeComment}
                 value={comment}

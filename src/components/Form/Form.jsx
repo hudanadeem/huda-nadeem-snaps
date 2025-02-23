@@ -7,7 +7,6 @@ function Form({ API_URL, API_KEY, id, setComments, comments }) {
   const [comment, setComment] = useState("");
   const [error, setError] = useState(false);
 
-
   const getCommentsAndRender = async () => {
     try {
       const response = await axios.get(
@@ -66,8 +65,7 @@ function Form({ API_URL, API_KEY, id, setComments, comments }) {
       })
       .then((response) => {
         if (response.status === 201) {
-
-          setComments([response.data, ...comments]); 
+          setComments([response.data, ...comments]);
           getCommentsAndRender();
 
           setName("");

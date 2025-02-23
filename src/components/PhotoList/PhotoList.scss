@@ -17,10 +17,8 @@
 
   @include desktop {
     width: 100%;
-
-    &--open {
-      width: 67.33%;
-    }
+    display: flex;
+    gap: 1rem;
   }
 }
 

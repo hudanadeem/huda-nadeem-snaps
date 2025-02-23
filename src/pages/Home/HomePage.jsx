@@ -4,6 +4,8 @@ import PhotoList from "../../components/PhotoList/PhotoList";
 import Footer from "../../components/Footer/Footer";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import DesktopDrawer from "../../components/DesktopDrawer/DesktopDrawer";
+import "./HomePage.scss";
 
 function HomePage() {
   const API_URL = "https://unit-3-project-c5faaab51857.herokuapp.com";
@@ -50,8 +52,19 @@ function HomePage() {
         showFilters={true}
         showHomeLink={false}
       />
-      <Hero drawerOpen={drawerOpen} />
-      <PhotoList filteredPhotos={filteredPhotos} drawerOpen={drawerOpen} />
+
+      <div className={`main__container${drawerOpen ? "--desktop" : ""}`}>
+        <div className={`photo__container${drawerOpen ? "--desktop" : ""}`}>
+          <Hero drawerOpen={drawerOpen} />
+          <PhotoList filteredPhotos={filteredPhotos} drawerOpen={drawerOpen} />
+        </div>
+        <DesktopDrawer
+          drawerOpen={drawerOpen}
+          selectedTag={selectedTag}
+          setSelectedTag={setSelectedTag}
+          tags={tags}
+        />
+      </div>
       <Footer />
     </>
   );

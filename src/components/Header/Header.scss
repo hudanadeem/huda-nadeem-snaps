@@ -94,23 +94,17 @@
         gap: 3rem;
       }
       @include desktop {
-        position: absolute;
-        top: 9rem;
-        right: 0;
-        width: 28rem;
-        z-index: 0;
-        padding: 2rem 4rem;
+        display: none;
       }
     }
   }
 
-  &__photoPage{
-
+  &__photoPage {
     display: flex;
     gap: 1rem;
     align-items: center;
 
-    &--link{
+    &--link {
       font-size: 2rem;
       padding: 0;
       font-weight: 600;
@@ -119,7 +113,7 @@
       font-family: "Outfit";
     }
   }
-  &__arrow{
+  &__arrow {
     height: 1.5rem;
   }
 }

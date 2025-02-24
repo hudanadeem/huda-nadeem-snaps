@@ -1,5 +1,7 @@
 import "./PhotoList.scss";
 import PhotoTag from "../PhotoTag/PhotoTag";
+import { Link } from "react-router-dom";
+import PhotoCard from "../PhotoCard/PhotoCard";
 
 const PhotoList = ({ filteredPhotos, drawerOpen }) => {
   return (
@@ -7,11 +9,13 @@ const PhotoList = ({ filteredPhotos, drawerOpen }) => {
       {filteredPhotos.map((obj) => {
         return (
           <div key={obj.id} className="photo">
-            <img
-              className="photo__img"
-              src={obj.photo}
-              alt={obj.photoDescription}
-            />
+            <Link to={`/photos/${obj.id}`} className="photo__link">
+              <img
+                className="photo__img"
+                src={obj.photo}
+                alt={obj.photoDescription}
+              />
+            </Link>
             <div className="photo__content">
               <div className="photo__photographer">{obj.photographer}</div>
               <div className="photo__tags">

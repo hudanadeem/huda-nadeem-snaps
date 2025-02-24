@@ -1,0 +1,26 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.comment {
+  font-weight: 600;
+  font-family: "Outfit";
+  padding-top: 1rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__name , &__date{
+    padding-bottom: 1rem;
+    color: $primary-accent-color;
+    font-size: 0.9rem;
+  }
+
+  &__content {
+    padding-bottom: 1rem;
+    font-size: 1rem;
+    border-bottom: 2px solid $secondary-border-color;
+  }
+}

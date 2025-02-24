@@ -1,0 +1,58 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.photoCard {
+  padding: 8rem 1rem 1rem 1rem;
+
+  @include tablet{
+    padding: 11rem 2rem 1rem 2rem;
+  }
+
+  @include desktop{
+    padding: 11rem 17rem 1rem 17rem;
+  }
+
+  &__container {
+    border-radius: 0.75rem;
+    border: 0.125rem solid $secondary-border-color;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+  &__content {
+    background-color: $secondary-background-color;
+    padding: 1.5rem;
+  }
+  &__content--container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__img {
+    height: auto;
+    width: 100%;
+    z-index: 0;
+    display: block;
+  }
+
+  &__likes {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1.5rem 0 0 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  &__photographer {
+    padding: 1rem 0 0 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $primary-text-color;
+  }
+  &__date {
+    padding: 1.5rem 0 0 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}

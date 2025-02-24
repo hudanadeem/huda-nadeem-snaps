@@ -1,0 +1,83 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.form__container {
+  padding: 0rem 1rem;
+
+  @include tablet{
+    padding: 0rem 2rem;
+  }
+
+  @include desktop{
+    padding: 0rem 17rem;
+  }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+  &__layout {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    text-transform: capitalize;
+    color: $primary-text-color;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: "Outfit";
+  }
+  &__name {
+    border: 2px solid $secondary-border-color;
+    padding: 0.5rem;
+    border-radius: .625rem;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+    font-family: "Outfit";
+    height: 2.5rem;
+    text-transform: capitalize;
+    &:focus{
+      border: 2px solid $primary-accent-color;
+      outline: none;
+    }
+    &--error{
+      border: 2px solid #B10606;
+    }
+  }
+  &__comment {
+    border: 2px solid $secondary-border-color;
+    padding: 0.5rem;
+    border-radius: .625rem;
+    resize: none;
+    height: 5rem;
+    margin-top: 0.5rem;
+    font-family: "Outfit";
+    text-transform: capitalize;
+    &:focus{
+      border: 2px solid $primary-accent-color;
+      outline: none;
+    }
+    &--error{
+      border: 2px solid #B10606;
+    }
+  }
+  &__btn {
+    font-size: 1rem;
+    align-self: flex-end;
+    border-radius: 6px;
+    background-color: $primary-accent-color;
+    color: $secondary-text-color;
+    font-weight: 600;
+    font-family: "Outfit";
+    border: none;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+  }
+}

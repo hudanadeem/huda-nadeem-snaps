@@ -1,0 +1,35 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.page__drawer {
+  display: none;
+
+  @include desktop {
+    padding: 2rem 1rem;
+    margin: 0;
+
+    &--open {
+      display: flex;
+      flex-direction: column;
+      margin: 0rem 2rem 0rem 0rem;
+      gap: 2rem;
+      background-color: $secondary-background-color;
+      padding-top: 12rem;
+      width: 33%;
+
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        padding: 0rem 2rem;
+      }
+    }
+    &--title {
+      font-family: "Outfit";
+      padding: 1rem 2rem;
+    }
+  }
+}

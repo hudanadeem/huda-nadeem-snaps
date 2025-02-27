@@ -2,7 +2,7 @@ import "./Form.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function Form({ API_URL, API_KEY, id, setComments, comments }) {
+function Form({ baseURL, id, setComments, comments }) {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [error, setError] = useState(false);
@@ -10,7 +10,7 @@ function Form({ API_URL, API_KEY, id, setComments, comments }) {
   const getCommentsAndRender = async () => {
     try {
       const response = await axios.get(
-        `${API_URL}/photos/${id}/comments?api_key=${API_KEY}`
+        `${baseURL}/photos/${id}/comments`
       );
       const sortedComments = response.data.sort(
         (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
@@ -24,7 +24,7 @@ function Form({ API_URL, API_KEY, id, setComments, comments }) {
 
   useEffect(() => {
     getCommentsAndRender();
-  }, [API_URL, API_KEY, id]);
+  }, [baseURL, id]);
 
   const handleChangeName = (event) => {
     setName(event.target.value);
@@ -58,7 +58,7 @@ function Form({ API_URL, API_KEY, id, setComments, comments }) {
     };
 
     axios
-      .post(`${API_URL}/photos/${id}/comments?api_key=${API_KEY}`, newComment, {
+      .post(`${baseURL}/photos/${id}/comments`, newComment, {
         headers: {
           "Content-Type": "application/json",
         },

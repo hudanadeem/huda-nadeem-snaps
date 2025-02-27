@@ -7,15 +7,15 @@ import axios from "axios";
 import DesktopDrawer from "../../components/DesktopDrawer/DesktopDrawer";
 import "./HomePage.scss";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 function HomePage() {
-  const API_URL = "https://unit-3-project-c5faaab51857.herokuapp.com";
-  const API_KEY = "?api_key=325ecbce-cb56-4c39-8333-877b3e1bfb3b";
   const [photos, setPhotos] = useState([]);
   const [tags, setTags] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/photos${API_KEY}`)
+      .get(`${baseURL}/photos`)
       .then((response) => {
         setPhotos(response.data);
       })
@@ -26,7 +26,7 @@ function HomePage() {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/tags${API_KEY}`)
+      .get(`${baseURL}/tags`)
       .then((response) => {
         setTags(response.data);
       })

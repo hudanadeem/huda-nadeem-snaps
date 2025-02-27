@@ -5,13 +5,13 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import PhotoCard from "../../components/PhotoCard/PhotoCard";
 import { useState, useEffect } from "react";
-import tags from "../../data/tags.json";
 import Form from "../../components/Form/Form";
 import Comment from "../../components/Comment/Comment";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
+
 function PhotoPage() {
-  const API_URL = "https://unit-3-project-c5faaab51857.herokuapp.com";
-  const API_KEY = "?api_key=325ecbce-cb56-4c39-8333-877b3e1bfb3b";
   const [photos, setPhotos] = useState(null);
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,7 +22,7 @@ function PhotoPage() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`${API_URL}/photos/${id}${API_KEY}`)
+      .get(`${baseURL}/photos/${id}`)
       .then((response) => {
         setPhotos(response.data);
         setLoading(false);
@@ -34,7 +34,7 @@ function PhotoPage() {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/photos/${id}/comments${API_KEY}`)
+      .get(`${baseURL}/photos/${id}/comments`)
       .then((response) => {
         setComments(response.data);
       })
@@ -42,6 +42,19 @@ function PhotoPage() {
         console.error("Error fetching comments:", error);
       });
   }, [id]);
+
+  let tags;
+  useEffect(() => {
+    axios
+      .get(`${baseURL}/tags`)
+      .then((response) => {
+        tags = response.data;
+      })
+      .catch((error) => {
+        console.error("Error fetching comments:", error);
+      });
+  }, [id]);
+
 
   if (loading || !photos) {
     return <div>Loading photo...</div>;
@@ -59,7 +72,7 @@ function PhotoPage() {
         showHomeLink={true}
       />
       <PhotoCard photos={photos} />
-      <Form API_URL={API_URL} API_KEY = {API_KEY} id={id} setComments={setComments} comments={comments}/>
+      <Form baseURL={baseURL} id={id} setComments={setComments} comments={comments}/>
       <div className="comments">
         <div className="comment__count"> {comments?.length} Comments</div>
         {comments.map((comment) => {

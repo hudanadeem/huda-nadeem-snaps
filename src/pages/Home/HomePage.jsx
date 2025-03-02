@@ -14,25 +14,29 @@ function HomePage() {
   const [tags, setTags] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`${baseURL}/photos`)
-      .then((response) => {
+    const fetchPhotos = async () => {
+      try {
+        const response = await axios.get(`${baseURL}/photos`);
         setPhotos(response.data);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Error fetching photos:", error);
-      });
+      }
+    };
+
+    fetchPhotos();
   }, []);
 
   useEffect(() => {
-    axios
-      .get(`${baseURL}/tags`)
-      .then((response) => {
+    const fetchTags = async () => {
+      try {
+        const response = await axios.get(`${baseURL}/tags`);
         setTags(response.data);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Error fetching tags:", error);
-      });
+      }
+    };
+
+    fetchTags();
   }, []);
 
   const [drawerOpen, setDrawerOpen] = useState(false);

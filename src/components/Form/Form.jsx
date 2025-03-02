@@ -9,9 +9,7 @@ function Form({ baseURL, id, setComments, comments }) {
 
   const getCommentsAndRender = async () => {
     try {
-      const response = await axios.get(
-        `${baseURL}/photos/${id}/comments`
-      );
+      const response = await axios.get(`${baseURL}/photos/${id}/comments`);
       const sortedComments = response.data.sort(
         (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
       );
@@ -43,7 +41,7 @@ function Form({ baseURL, id, setComments, comments }) {
     return name.trim() !== "" && comment.trim() !== "";
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (!isFormValid()) {
@@ -57,24 +55,27 @@ function Form({ baseURL, id, setComments, comments }) {
       comment,
     };
 
-    axios
-      .post(`${baseURL}/photos/${id}/comments`, newComment, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then((response) => {
-        if (response.status === 201) {
-          setComments([response.data, ...comments]);
-          getCommentsAndRender();
-
-          setName("");
-          setComment("");
+    try {
+      const response = await axios.post(
+        `${baseURL}/photos/${id}/comments`,
+        newComment,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
-      })
-      .catch((error) => {
-        console.error("Error submitting comment:", error);
-      });
+      );
+
+      if (response.status === 201) {
+        setComments([response.data, ...comments]);
+        await getCommentsAndRender();
+
+        setName("");
+        setComment("");
+      }
+    } catch (error) {
+      console.error("Error submitting comment:", error);
+    }
   };
 
   return (

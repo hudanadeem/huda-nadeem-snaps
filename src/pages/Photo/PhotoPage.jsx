@@ -10,54 +10,54 @@ import Comment from "../../components/Comment/Comment";
 
 const baseURL = import.meta.env.VITE_API_URL;
 
-
 function PhotoPage() {
   const [photos, setPhotos] = useState(null);
   const [comments, setComments] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [selectedTag, setSelectedTag] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
-    setLoading(true);
-    axios
-      .get(`${baseURL}/photos/${id}`)
-      .then((response) => {
+    const fetchPhoto = async () => {
+      try {
+        const response = await axios.get(`${baseURL}/photos/${id}`);
         setPhotos(response.data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching photos:", error);
-      });
+      } catch (error) {
+        console.error("Error fetching photo:", error);
+      }
+    };
+
+    if (id) fetchPhoto();
   }, [id]);
 
   useEffect(() => {
-    axios
-      .get(`${baseURL}/photos/${id}/comments`)
-      .then((response) => {
+    const fetchComments = async () => {
+      try {
+        const response = await axios.get(`${baseURL}/photos/${id}/comments`);
         setComments(response.data);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Error fetching comments:", error);
-      });
+      }
+    };
+
+    if (id) fetchComments();
   }, [id]);
 
-  let tags;
   useEffect(() => {
-    axios
-      .get(`${baseURL}/tags`)
-      .then((response) => {
-        tags = response.data;
-      })
-      .catch((error) => {
-        console.error("Error fetching comments:", error);
-      });
-  }, [id]);
+    const fetchTags = async () => {
+      try {
+        const response = await axios.get(`${baseURL}/tags`);
+        setTags(response.data);
+      } catch (error) {
+        console.error("Error fetching tags:", error);
+      }
+    };
 
+    fetchTags();
+  }, []);
 
-  if (loading || !photos) {
-    return <div>Loading photo...</div>;
+  if (!photos || !comments) {
+    return <div>Loading ...</div>;
   }
 
   return (
@@ -72,7 +72,12 @@ function PhotoPage() {
         showHomeLink={true}
       />
       <PhotoCard photos={photos} />
-      <Form baseURL={baseURL} id={id} setComments={setComments} comments={comments}/>
+      <Form
+        baseURL={baseURL}
+        id={id}
+        setComments={setComments}
+        comments={comments}
+      />
       <div className="comments">
         <div className="comment__count"> {comments?.length} Comments</div>
         {comments.map((comment) => {

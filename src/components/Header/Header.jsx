@@ -46,41 +46,43 @@ const Header = ({
           </nav>
         )}
         {showHomeLink && (
-          <div className="header__photoPage">
-            <img className="header__arrow" src={arrow} alt="Arrow" />
-            <Link className="header__photoPage--link" to="/">
-              Home
-            </Link>
+          <div>
+            <div className="header__photoPage">
+              <img className="header__arrow" src={arrow} alt="Arrow" />
+              <Link className="header__photoPage--link" to="/">
+                Home
+              </Link>
+            </div>
+          </div>
+        )}
+        {showFilters && (
+          <div
+            className={`header__drawer ${
+              drawerOpen ? "header__drawer--open" : ""
+            }`}
+          >
+            <h2 className="header__drawer--title">Filters</h2>
+            <ul>
+              {tags.map((tag) => {
+                return (
+                  <li
+                    key={tag}
+                    onClick={() => {
+                      if (selectedTag === tag) {
+                        setSelectedTag(null);
+                      } else {
+                        setSelectedTag(tag);
+                      }
+                    }}
+                  >
+                    <Tag tag={tag} isClickable selectedTag={selectedTag} />
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         )}
       </div>
-      {showFilters && (
-        <div
-          className={`header__drawer ${
-            drawerOpen ? "header__drawer--open" : ""
-          }`}
-        >
-          <h2 className="header__drawer--title">Filters</h2>
-          <ul>
-            {tags.map((tag) => {
-              return (
-                <li
-                  key={tag}
-                  onClick={() => {
-                    if (selectedTag === tag) {
-                      setSelectedTag(null);
-                    } else {
-                      setSelectedTag(tag);
-                    }
-                  }}
-                >
-                  <Tag tag={tag} isClickable selectedTag={selectedTag} />
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      )}
     </header>
   );
 };

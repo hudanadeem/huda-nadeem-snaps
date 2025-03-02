@@ -5,12 +5,13 @@
 
 .header {
   &__container {
-    padding: 2rem 1rem 2rem 1rem;
+    padding: 2rem 1rem;
     margin-bottom: 5rem;
     position: fixed;
     background-color: $primary-background-color;
     width: 100%;
     z-index: 2;
+    height: 10rem;
     @include flex(row, space-between, center);
 
     @include tablet {
@@ -103,6 +104,7 @@
     display: flex;
     gap: 1rem;
     align-items: center;
+    height: 100%;
 
     &--link {
       font-size: 2rem;

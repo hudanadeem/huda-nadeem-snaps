@@ -67,11 +67,10 @@ function Form({ baseURL, id, setComments, comments }) {
       );
 
       if (response.status === 201) {
-        setComments([response.data, ...comments]);
-        await getCommentsAndRender();
-
         setName("");
         setComment("");
+
+        await getCommentsAndRender();
       }
     } catch (error) {
       console.error("Error submitting comment:", error);

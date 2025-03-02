@@ -43,11 +43,12 @@ function PhotoPage() {
     if (id) fetchComments();
   }, [id]);
 
+  let tags;
   useEffect(() => {
     const fetchTags = async () => {
       try {
         const response = await axios.get(`${baseURL}/tags`);
-        setTags(response.data);
+        tags = response.data;
       } catch (error) {
         console.error("Error fetching tags:", error);
       }
@@ -78,12 +79,12 @@ function PhotoPage() {
         setComments={setComments}
         comments={comments}
       />
-      <div className="comments">
+      <section className="comments">
         <div className="comment__count"> {comments?.length} Comments</div>
         {comments.map((comment) => {
           return <Comment key={comment.id} comment={comment} />;
         })}
-      </div>
+      </section>
       <Footer />
     </>
   );

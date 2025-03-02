@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="footer__links--conatiner">
           <h2>Snaps</h2>
           <div className="footer__links">
-            <div className="footer__links--1">
+            <section className="footer__links--1">
               <h3>
                 <a href="#">For photographers</a>
               </h3>
@@ -21,8 +21,8 @@ const Footer = () => {
               <h3>
                 <a href="#">Insipration</a>
               </h3>
-            </div>
-            <div className="footer__links--2">
+            </section>
+            <section className="footer__links--2">
               <h3>
                 <a href="#">About</a>
               </h3>
@@ -32,10 +32,10 @@ const Footer = () => {
               <h3>
                 <a href="#">Support</a>
               </h3>
-            </div>
+            </section>
           </div>
         </div>
-        <div className="footer__icon--container">
+        <section className="footer__icon--container">
           <a href="https://www.facebook.com/">
             <img
               className="footer__icon"
@@ -60,14 +60,14 @@ const Footer = () => {
               alt="pinterest"
             ></img>
           </a>
-        </div>
+        </section>
       </div>
-      <div className="footer__mark">
+      <section className="footer__mark">
         <p>@ 2024 Snaps</p>
         <p>Terms</p>
         <p>Privacy</p>
         <p>Cookies</p>
-      </div>
+      </section>
     </div>
   );
 };

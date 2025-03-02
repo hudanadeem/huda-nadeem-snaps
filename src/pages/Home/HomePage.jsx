@@ -57,18 +57,18 @@ function HomePage() {
         showHomeLink={false}
       />
 
-      <div className={`main__container${drawerOpen ? "--desktop" : ""}`}>
-        <div className={`photo__container${drawerOpen ? "--desktop" : ""}`}>
+      <main className={`main__container${drawerOpen ? "--desktop" : ""}`}>
+        <section className={`photo__container${drawerOpen ? "--desktop" : ""}`}>
           <Hero drawerOpen={drawerOpen} />
           <PhotoList filteredPhotos={filteredPhotos} drawerOpen={drawerOpen} />
-        </div>
+        </section>
         <DesktopDrawer
           drawerOpen={drawerOpen}
           selectedTag={selectedTag}
           setSelectedTag={setSelectedTag}
           tags={tags}
         />
-      </div>
+      </main>
       <Footer />
     </>
   );

@@ -78,36 +78,32 @@ function Form({ baseURL, id, setComments, comments }) {
   };
 
   return (
-    <>
+    <form className="form" onSubmit={handleSubmit}>
       <div className="form__container">
-        <form className="form" onSubmit={handleSubmit}>
-          <div className="form__layout">
-            <label className="form__label">
-              name
-              <input
-                className={`form__name ${error ? "form__name--error" : ""}`}
-                type="text"
-                name="name"
-                onChange={handleChangeName}
-                value={name}
-              ></input>
-            </label>
-            <label className="form__label">
-              comment
-              <textarea
-                className={`form__comment ${
-                  error ? "form__comment--error" : ""
-                }`}
-                name="comment"
-                onChange={handleChangeComment}
-                value={comment}
-              ></textarea>
-            </label>
-          </div>
-          <button className="form__btn">Submit</button>
-        </form>
+        <div className="form__layout">
+          <label className="form__label">
+            name
+            <input
+              className={`form__name ${error ? "form__name--error" : ""}`}
+              type="text"
+              name="name"
+              onChange={handleChangeName}
+              value={name}
+            ></input>
+          </label>
+          <label className="form__label">
+            comment
+            <textarea
+              className={`form__comment ${error ? "form__comment--error" : ""}`}
+              name="comment"
+              onChange={handleChangeComment}
+              value={comment}
+            ></textarea>
+          </label>
+        </div>
+        <button className="form__btn">Submit</button>
       </div>
-    </>
+    </form>
   );
 }
 

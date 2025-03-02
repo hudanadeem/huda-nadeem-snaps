@@ -3,7 +3,7 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
 
-.photoCard {
+.photo-card {
   padding: 8rem 1rem 1rem 1rem;
 
   @include tablet{

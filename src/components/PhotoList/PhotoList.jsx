@@ -1,7 +1,6 @@
 import "./PhotoList.scss";
 import PhotoTag from "../PhotoTag/PhotoTag";
 import { Link } from "react-router-dom";
-import PhotoCard from "../PhotoCard/PhotoCard";
 
 const PhotoList = ({ filteredPhotos, drawerOpen }) => {
   return (

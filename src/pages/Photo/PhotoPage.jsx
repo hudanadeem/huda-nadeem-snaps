@@ -11,7 +11,7 @@ import Comment from "../../components/Comment/Comment";
 const baseURL = import.meta.env.VITE_API_URL;
 
 function PhotoPage() {
-  const [photos, setPhotos] = useState(null);
+  const [photo, setPhoto] = useState(null);
   const [comments, setComments] = useState([]);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [selectedTag, setSelectedTag] = useState(null);
@@ -21,7 +21,7 @@ function PhotoPage() {
     const fetchPhoto = async () => {
       try {
         const response = await axios.get(`${baseURL}/photos/${id}`);
-        setPhotos(response.data);
+        setPhoto(response.data);
       } catch (error) {
         console.error("Error fetching photo:", error);
       }
@@ -57,7 +57,7 @@ function PhotoPage() {
     fetchTags();
   }, []);
 
-  if (!photos || !comments) {
+  if (!photo || !comments) {
     return <div>Loading ...</div>;
   }
 
@@ -72,7 +72,7 @@ function PhotoPage() {
         showFilters={false}
         showHomeLink={true}
       />
-      <PhotoCard photos={photos} />
+      <PhotoCard photo={photo} />
       <Form
         baseURL={baseURL}
         id={id}

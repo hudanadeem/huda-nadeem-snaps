@@ -1,10 +1,8 @@
-@use "../../styles/partials/global" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
 
 .photo__tag {
-  border: .0938rem solid $secondary-border-color;
+  border: 0.0938rem solid $secondary-border-color;
   padding: 0.5rem;
   border-radius: 0.75rem;
   background-color: $secondary-text-color;

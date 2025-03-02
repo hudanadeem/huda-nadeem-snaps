@@ -1,7 +1,5 @@
-@use "../../styles/partials/global" as *;
-@use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .comment {
   font-weight: 600;
@@ -12,7 +10,8 @@
     display: flex;
     justify-content: space-between;
   }
-  &__name , &__date{
+  &__name,
+  &__date {
     padding-bottom: 1rem;
     color: $primary-accent-color;
     font-size: 0.9rem;

@@ -1,23 +1,21 @@
-@use "../../styles/partials/global" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
 
 .form__container {
   padding: 0rem 1rem;
 
-  @include tablet{
+  @include tablet {
     padding: 0rem 2rem;
   }
 
-  @include desktop{
+  @include desktop {
     padding: 0rem 17rem;
   }
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
   &__layout {
     display: flex;
     flex-direction: column;
@@ -37,35 +35,35 @@
   &__name {
     border: 2px solid $secondary-border-color;
     padding: 0.5rem;
-    border-radius: .625rem;
+    border-radius: 0.625rem;
     box-sizing: border-box;
     margin-top: 0.5rem;
     font-family: "Outfit";
     height: 2.5rem;
     text-transform: capitalize;
-    &:focus{
+    &:focus {
       border: 2px solid $primary-accent-color;
       outline: none;
     }
-    &--error{
-      border: 2px solid #B10606;
+    &--error {
+      border: 2px solid #b10606;
     }
   }
   &__comment {
     border: 2px solid $secondary-border-color;
     padding: 0.5rem;
-    border-radius: .625rem;
+    border-radius: 0.625rem;
     resize: none;
     height: 5rem;
     margin-top: 0.5rem;
     font-family: "Outfit";
     text-transform: capitalize;
-    &:focus{
+    &:focus {
       border: 2px solid $primary-accent-color;
       outline: none;
     }
-    &--error{
-      border: 2px solid #B10606;
+    &--error {
+      border: 2px solid #b10606;
     }
   }
   &__btn {

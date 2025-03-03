@@ -22,14 +22,16 @@ function PhotoCard({ photo }) {
               })}
             </div>
             <div className="photo-card__content--container">
-              <div className="photo-card__likes">
-                <img src={likeIcon} alt="likes" />
-                {photo.likes} likes
+              <div className="photo-card__content--group">
+                <div className="photo-card__likes">
+                  <img src={likeIcon} alt="likes" />
+                  {photo.likes} likes
+                </div>
+                <div className="photo-card__photographer">
+                  Photo by {photo.photographer}
+                </div>
               </div>
               <div className="photo-card__date">{date}</div>
-            </div>
-            <div className="photo-card__photographer">
-              Photo by {photo.photographer}
             </div>
           </div>
         </div>

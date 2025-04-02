@@ -15,9 +15,10 @@ const Header = ({
   return (
     <header className="header">
       <div className="header__container">
+      <div className="header__top-row">
         <h1 className="header__title">
           <Link className="header__link" to="/">
-            Snaps
+            PhotoSync
           </Link>
         </h1>
         {showFilters && (
@@ -55,6 +56,7 @@ const Header = ({
             </div>
           </div>
         )}
+        </div>
         {showFilters && (
           <div
             className={`header__drawer ${

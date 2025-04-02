@@ -2,24 +2,25 @@
 @use "../../styles/partials/variables" as *;
 
 .hero {
-  padding: 8rem 1rem 1rem 1rem;
+  padding: 0rem 1rem 1rem 1rem;
 
   &--active {
-    padding-top: 2rem;
+    padding-top: 15rem;
   }
 
   @include tablet {
-    padding: 11rem 2rem 1rem 2rem;
+    padding: 2rem 2rem 1rem 2rem;
 
     &--active {
-      padding-top: 2rem;
+      padding-top: 20rem;
     }
   }
 
   @include desktop {
+    padding: 2rem 2rem 1rem 2rem;
     width: 66%;
     &--active {
-      padding-top: 11rem;
+      padding-top: 0rem;
       width: 90%;
     }
   }

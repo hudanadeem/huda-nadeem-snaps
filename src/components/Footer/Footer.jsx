@@ -9,7 +9,7 @@ const Footer = () => {
     <div className="footer">
       <div className="footer__container">
         <div className="footer__links--conatiner">
-          <h2>Snaps</h2>
+          <h2>PhotoSync</h2>
           <div className="footer__links">
             <section className="footer__links--1">
               <h3>
@@ -63,7 +63,7 @@ const Footer = () => {
         </section>
       </div>
       <section className="footer__mark">
-        <p>@ 2024 Snaps</p>
+        <p>@ 2024 PhotoSync</p>
         <p>Terms</p>
         <p>Privacy</p>
         <p>Cookies</p>

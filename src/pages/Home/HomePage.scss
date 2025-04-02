@@ -7,8 +7,10 @@
   }
 }
 
-.photo__container--desktop {
-  @include desktop {
-    width: 70%;
+.photo__container {
+  &--desktop {
+    @include desktop {
+      width: 70%;
+    }
   }
 }
